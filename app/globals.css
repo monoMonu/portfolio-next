@@ -44,92 +44,93 @@
 }
 
 :root {
-   --radius: 0.625rem;
+  --radius: 0.625rem;
 
-   --background: #ffffff;
-   --foreground: #1a1a1a;
+  /* Base */
+  --background: #ffffff;
+  --foreground: #111827; /* Almost black, better for reading */
 
-   --card: #ffffff;
-   --card-foreground: #1a1a1a;
+  --card: #f9fafb;
+  --card-foreground: #111827;
 
-   --popover: #ffffff;
-   --popover-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #111827;
 
-   --primary: #4152b5;
-   --primary-foreground: #ffffff;
+  --primary: #3b82f6; /* Tailwind's blue-500 */
+  --primary-foreground: #ffffff;
 
-   --secondary: #d2dfeb;
-   --secondary-foreground: #3f51b5;
+  --secondary: #e5e7eb; /* Tailwind's gray-200 */
+  --secondary-foreground: #111827;
 
-   --muted: #b5cde5;
-   --muted-foreground: #6c757d;
+  --muted: rgb(206, 212, 226); /* Tailwind's gray-100 */
+  --muted-foreground: #4b5563; /* gray-600 */
 
-   --accent: #e3f2fd;
-   --accent-foreground: #3f51b5;
+  --accent: #dbeafe; /* blue-100 */
+  --accent-foreground: #1e40af; /* blue-800 */
 
-   --destructive: #e53935;
-   --border: #e0e0e0;
-   --input: #e0e0e0;
-   --ring: #cfd8dc;
+  --destructive: #ef4444; /* red-500 */
+  --border: #e5e7eb;
+  --input: #d1d5db;
+  --ring: #93c5fd;
 
-   --chart-1: #ff7043;
-   --chart-2: #42a5f5;
-   --chart-3: #7e57c2;
-   --chart-4: #66bb6a;
-   --chart-5: #ffee58;
+  --chart-1: #f87171; /* red-400 */
+  --chart-2: #60a5fa; /* blue-400 */
+  --chart-3: #a78bfa; /* purple-400 */
+  --chart-4: #34d399; /* green-400 */
+  --chart-5: #facc15; /* yellow-400 */
 
-   --sidebar: #f8f9fa;
-   --sidebar-foreground: #1a1a1a;
-   --sidebar-primary: #3f51b5;
-   --sidebar-primary-foreground: #ffffff;
-   --sidebar-accent: #e3f2fd;
-   --sidebar-accent-foreground: #3f51b5;
-   --sidebar-border: #e0e0e0;
-   --sidebar-ring: #cfd8dc;
+  /* Sidebar */
+  --sidebar: #f3f4f6; /* light gray */
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #dbeafe;
+  --sidebar-accent-foreground: #1e40af;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #93c5fd;
 }
 
-
 .dark {
-   --background: #121212;
-   --foreground: #ffffff;
+  --background: #0f172a; /* slate-900 */
+  --foreground: #f1f5f9; /* slate-100 */
 
-   --card: #1e1e1e;
-   --card-foreground: #ffffff;
+  --card: #1e293b; /* slate-800 */
+  --card-foreground: #f1f5f9;
 
-   --popover: #1e1e1e;
-   --popover-foreground: #ffffff;
+  --popover: #1e293b;
+  --popover-foreground: #f1f5f9;
 
-   --primary: #7480bb;
-   --primary-foreground: #121212;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
 
-   --secondary: #252127;
-   --secondary-foreground: #ffffff;
+  --secondary: #334155; /* slate-700 */
+  --secondary-foreground: #f1f5f9;
 
-   --muted: #2a2a2a;
-   --muted-foreground: #b0bec5;
+  --muted: #475569; /* slate-600 */
+  --muted-foreground: #cbd5e1; /* slate-300 */
 
-   --accent: #3949ab;
-   --accent-foreground: #ffffff;
+  --accent: #1e3a8a; /* blue-900 */
+  --accent-foreground: #e0f2fe; /* blue-100 */
 
-   --destructive: #ef5350;
-   --border: #2e2e2e;
-   --input: #3c3c3c;
-   --ring: #5c6bc0;
+  --destructive: #ef4444;
+  --border: #334155;
+  --input: #475569;
+  --ring: #60a5fa;
 
-   --chart-1: #ff8a65;
-   --chart-2: #64b5f6;
-   --chart-3: #9575cd;
-   --chart-4: #81c784;
-   --chart-5: #fff176;
+  --chart-1: #f87171;
+  --chart-2: #60a5fa;
+  --chart-3: #a78bfa;
+  --chart-4: #34d399;
+  --chart-5: #facc15;
 
-   --sidebar: #1e1e1e;
-   --sidebar-foreground: #ffffff;
-   --sidebar-primary: #7986cb;
-   --sidebar-primary-foreground: #121212;
-   --sidebar-accent: #3949ab;
-   --sidebar-accent-foreground: #ffffff;
-   --sidebar-border: #2e2e2e;
-   --sidebar-ring: #5c6bc0;
+  --sidebar: #1e293b; /* slate-800 */
+  --sidebar-foreground: #f1f5f9;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1e3a8a;
+  --sidebar-accent-foreground: #e0f2fe;
+  --sidebar-border: #334155;
+  --sidebar-ring: #60a5fa;
 }
 
 html {
@@ -143,6 +144,6 @@ html {
    }
 
    body {
-      @apply bg-background text-foreground;
+      @apply bg-background text-foreground relative;
    }
 }
