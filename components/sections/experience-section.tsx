@@ -36,7 +36,7 @@ export default function ExperienceSection() {
                   >
                      <span className="absolute md:left-[-2.65rem] left-[-.65rem] top-1/3 -translate-y-1/2 w-5 h-5 rounded-full bg-primary" />
 
-                     <ExperienceCard {...exp} index={index} />
+                     <ExperienceCard {...exp} />
                   </motion.div>
                ))}
             </div>

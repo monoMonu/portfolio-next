@@ -8,7 +8,6 @@ export interface ExperienceType {
    start_date: string;
    end_date: string;
    responsibilities: string[];
-   index: number;
 };
 
 export default function ExperienceCard({
@@ -17,7 +16,6 @@ export default function ExperienceCard({
    start_date,
    end_date,
    responsibilities,
-   index,
 }: ExperienceType) {
 
    return (
