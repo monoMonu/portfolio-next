@@ -5,7 +5,7 @@ const allowedRoutes = ['projects', 'experiences', 'skills', 'about'];
 
 export const GET = async (
    req: NextRequest,
-   { params }: { params: { table: string } }
+   { params }: { params: Promise<{ table: string }> }
 ) => {
    const { table } = await params;
 
