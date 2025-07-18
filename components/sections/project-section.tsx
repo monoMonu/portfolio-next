@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import ProjectCard, { ProjectType } from '../project-card'
+import ProjectCard from '../project-card'
 import { useData } from '@/lib/data-provider'
 
 

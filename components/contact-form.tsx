@@ -15,7 +15,7 @@ function ContactForm() {
                Send a Message
             </h3>
             <p className="text-muted-foreground text-sm">
-               I'll get back to you as soon as possible.
+               I&apos;ll get back to you as soon as possible.
             </p>
          </div>
 

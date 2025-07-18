@@ -3,6 +3,12 @@
 import { useData } from '@/lib/data-provider';
 import { motion } from 'framer-motion';
 
+export interface ISkills {
+   name: string,
+   category: string,
+}
+
+
 const groupSkillsByCategory = (skills: Array<{ name: string; category: string }> | null | undefined) => {
    if (!Array.isArray(skills)) return {};
 
@@ -14,6 +20,7 @@ const groupSkillsByCategory = (skills: Array<{ name: string; category: string }>
       return acc;
    }, {});
 };
+
 
 export default function SkillsSection() {
 

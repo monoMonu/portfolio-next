@@ -26,7 +26,7 @@ function ContactSection() {
             >
                <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
                <p className="text-lg text-primary max-w-2xl mx-auto">
-                  Have a project in mind? Let's discuss how we can work together
+                  Have a project in mind? Let&apos;s discuss how we can work together
                </p>
             </motion.div>
 

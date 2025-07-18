@@ -5,13 +5,14 @@ import { fetchDataForKey } from "./utils";
 import { ProjectType } from "@/components/project-card";
 import { ExperienceType } from "@/components/experience-card";
 import { IAbout } from "@/components/sections/hero-section";
+import { ISkills } from "@/components/sections/skill-section";
 
 interface IData {
    about: IAbout[] | null,
    projects: ProjectType[] | null,
    experiences: ExperienceType[] | null,
-   skills: [] | null,
-   loading: Boolean
+   skills: ISkills[] | null,
+   loading: boolean
 }
 
 const DataContext = createContext<IData>({
