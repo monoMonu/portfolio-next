@@ -75,10 +75,10 @@ function ProjectCard({
                <Code className="w-12 h-12 text-primary/60" />
             </div>
             <CardHeader className="px-4 sm:px-5">
-               <CardTitle className="group-hover:text-primary transition-colors pb-1">
+               <CardTitle className="group-hover:text-primary transition-colors pb-1 text-xl">
                   {title}
                </CardTitle>
-               <CardDescription>
+               <CardDescription className='text-base'>
                   {description.map((el, i) => (
                      <li key={i}>{el}</li>
                   ))}

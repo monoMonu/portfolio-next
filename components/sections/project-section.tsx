@@ -8,9 +8,10 @@ import { useData } from '@/lib/data-provider'
 function ProjectSection() {
 
    const { projects } = useData();
+   const sortedProjects = projects?.sort((a, b) => a.index - b.index);
 
    return (
-      <section id="projects" className="py-20 px-6 sm:px-8">
+      <section id="projects" className="py-20 px-5 sm:px-8">
          <div className="max-w-6xl mx-auto">
             <motion.div
                initial={{ opacity: 0, y: 50 }}
@@ -19,25 +20,25 @@ function ProjectSection() {
                viewport={{ once: true }}
                className="text-center mb-16"
             >
-               <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+               <h2 className="text-3xl md:text-4xl font-bold mb-4">&lt; Featured Projects /&gt;</h2>
                <p className="text-lg text-primary max-w-2xl mx-auto">
                   Here are some of my recent projects that showcase my skills and experience
                </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
-               {projects?.map((project, i) => (
-                     <ProjectCard
-                        key={i}
-                        index={i}
-                        title={project?.title}
-                        description={project?.description}
-                        tech={project?.tech}
-                        livelink={project?.livelink}
-                        sourcelink={project?.sourcelink}
-                        image="#"
-                     />
-                  ))
+               {sortedProjects?.map((project, i) => (
+                  <ProjectCard
+                     key={i}
+                     index={i}
+                     title={project?.title}
+                     description={project?.description}
+                     tech={project?.tech}
+                     livelink={project?.livelink}
+                     sourcelink={project?.sourcelink}
+                     image="#"
+                  />
+               ))
                }
             </div>
          </div>

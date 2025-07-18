@@ -8,7 +8,7 @@ import { Send } from 'lucide-react'
 function ContactForm() {
    return (
       <div
-         className="rounded-xl md:p-8 sm:p-6 sm:backdrop-blur-md sm:bg-gradient-to-br sm:from-muted/30 sm:via-background/50 sm:to-muted/30 shadow-sm"
+         className="rounded-xl md:p-8 sm:p-6 sm:backdrop-blur-md sm:bg-gradient-to-br sm:from-muted/30 sm:via-background/50 sm:to-muted/30"
       >
          <div className="mb-8">
             <h3 className="text-3xl font-semibold mb-2 text-primary">

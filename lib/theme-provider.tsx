@@ -22,7 +22,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
    const [theme, setThemeState] = useState<Theme>('system');
    const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light');
 
-   // Applying theme to document root
    const applyTheme = (themeToApply: Theme) => {
       const root = window.document.documentElement;
 
@@ -50,7 +49,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       setThemeState(initialTheme);
       applyTheme(initialTheme);
 
-      // Listening for system theme changes
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
       const handleChange = () => {
          if (theme === 'system') {

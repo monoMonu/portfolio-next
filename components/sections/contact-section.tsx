@@ -15,7 +15,7 @@ function ContactSection() {
    const { about } = useData();
 
    return (
-      <section id="contact" className="py-20 px-6 sm:px-8">
+      <section id="contact" className="py-20 px-5 sm:px-8">
          <div className="max-w-6xl mx-auto">
             <motion.div
                initial={{ opacity: 0, y: 50 }}
@@ -24,7 +24,7 @@ function ContactSection() {
                viewport={{ once: true }}
                className="text-center mb-16"
             >
-               <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+               <h2 className="text-3xl md:text-4xl font-bold mb-4">&lt; Get In Touch /&gt;</h2>
                <p className="text-lg text-primary max-w-2xl mx-auto">
                   Have a project in mind? Let&apos;s discuss how we can work together
                </p>
@@ -55,7 +55,7 @@ function ContactSection() {
                            whileInView={{ opacity: 1, x: 0 }}
                            transition={{ duration: 0.8 }}
                            viewport={{ once: true }}
-                           className="flex gap-6 justify-center flex-wrap py-3"
+                           className="flex gap-5 flex-wrap py-3"
                         >
                            <Link 
                               href={about?.[0].github || ''}

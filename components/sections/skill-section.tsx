@@ -2,6 +2,7 @@
 
 import { useData } from '@/lib/data-provider';
 import { motion } from 'framer-motion';
+import SkillRow from '../skill-row';
 
 export interface ISkills {
    name: string,
@@ -28,7 +29,7 @@ export default function SkillsSection() {
    const groupedSkills = groupSkillsByCategory(skills);
 
    return (
-      <section id="skills" className="py-20 px-6 sm:px-8 bg-secondary/30">
+      <section id="skills" className="py-20 px-5 sm:px-8 bg-secondary/30">
          <div className="max-w-6xl mx-auto">
             <motion.div
                initial={{ opacity: 0, y: 50 }}
@@ -37,7 +38,7 @@ export default function SkillsSection() {
                viewport={{ once: true }}
                className="text-center mb-8"
             >
-               <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills & Expertise</h2>
+               <h2 className="text-3xl md:text-4xl font-bold mb-4">&lt; Skills & Expertise /&gt;</h2>
                <p className="text-lg text-primary">
                   Tools and technologies I work with
                </p>
@@ -52,23 +53,11 @@ export default function SkillsSection() {
                      transition={{ duration: 0.5, delay: idx * 0.2 }}
                      viewport={{ once: true }}
                   >
-                     <h3
-                        className={`text-base font-semibold mb-2.5 ${idx % 2 !== 0 ? 'text-right' : ''}`}
-                     >
-                        {category}
-                     </h3>
-                     <div
-                        className={`flex flex-wrap gap-4 ${idx % 2 !== 0 ? 'justify-end' : ''}`}
-                     >
-                        {skills.map((skill, i) => (
-                           <span
-                              key={i}
-                              className="px-4 py-2 rounded-full bg-gradient-to-r from-primary to-primary/50 text-primary-foreground text-sm font-medium shadow hover:scale-105 transition-transform"
-                           >
-                              {skill}
-                           </span>
-                        ))}
-                     </div>
+                     <SkillRow
+                        category={category}
+                        skills={skills}
+                        idx={idx}
+                     />
                   </motion.div>
                )
                )}

@@ -26,7 +26,7 @@ const DataContext = createContext<IData>({
 export const useData = () => useContext(DataContext);
 
 export const DataProvider = ({ children }: { children: React.ReactNode }) => {
-   const [loading, setLoading] = useState(false);
+   const [loading, setLoading] = useState(true);
    const [data, setData] = useState({
       about: null,
       projects: null,

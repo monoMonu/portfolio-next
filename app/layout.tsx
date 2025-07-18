@@ -11,9 +11,35 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-   title: "monoMonu",
-   description: "Monu's Portfolio",
+   title: "Monu | Web Developer Portfolio",
+   description: "Explore the work and projects of Monu, a passionate web developer specializing in modern web technologies.",
+   keywords: ["Monu",  "monoMonu", "Portfolio", "Web Developer", "Frontend Developer", "Next.js", "React"],
+   authors: [{ name: "Monu", url: "https://monomonu.vercel.app" }],
+   creator: "Monu",
+   openGraph: {
+      title: "Monu | Web Developer Portfolio",
+      description: "Showcasing Monu’s latest work, case studies, and web development projects.",
+      url: "https://monomonu.vercel.app",
+      siteName: "monoMonu",
+      images: [
+         {
+            url: "https://placehold.co/1200x630/000000/FFFFFF?text=M&font=poppins",
+            width: 1200,
+            height: 630,
+            alt: "Monu Portfolio",
+         },
+      ],
+      type: "website",
+   },
+   twitter: {
+      // card: "",
+      title: "Monu | Web Developer Portfolio",
+      description: "Explore Monu’s projects and skills in modern web development.",
+      creator: "@monoMonu0",
+      images: ["https://placehold.co/1200x630/000000/FFFFFF?text=M&font=poppins"],
+   },
 };
+
 
 export default function RootLayout({
    children,
@@ -25,15 +51,15 @@ export default function RootLayout({
          <body
             className={poppins.className}
          >
-            <DataProvider>
-               <ThemeProvider>
+            <ThemeProvider>
+               <DataProvider>
                   <main>
 
-                     {children} 
+                     {children}
                      <Footer />
                   </main>
-               </ThemeProvider>
-            </DataProvider>
+               </DataProvider>
+            </ThemeProvider>
 
          </body>
       </html>

@@ -14,7 +14,7 @@ export default function Loader() {
 
    return (
       <section 
-         className="w-screen h-screen fixed top-0 left-0 grid place-items-center bg-background"
+         className="w-screen h-screen fixed z-100 top-0 left-0 grid place-items-center bg-background"
       >
          <ul className="list-none p-0 m-0 flex flex-wrap gap-2 w-[150px] justify-center items-center relative">
             {order.map((backgroundColor) => (
