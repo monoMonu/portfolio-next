@@ -82,7 +82,7 @@ function ContactSection() {
                            <span className='text-sm'>{about?.[0].email}</span>
                         </div>
                         <Separator />
-                        <div>
+                        <div className='py-2 flex gap-4'>
                            {socialLinks.map(({ key, icon }, i) => {
                               const href = about?.[0]?.[key as keyof IAbout];
                               return (
