@@ -29,8 +29,8 @@ export default function SkillsSection() {
    const groupedSkills = groupSkillsByCategory(skills);
 
    return (
-      <section id="skills" className="py-20 px-5 sm:px-8 bg-secondary/30">
-         <div className="max-w-6xl mx-auto">
+      <section id="skills" className="py-20 px-5 sm:px-8">
+         <div className="max-w-screen-lg mx-auto">
             <motion.div
                initial={{ opacity: 0, y: 50 }}
                whileInView={{ opacity: 1, y: 0 }}

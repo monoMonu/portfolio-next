@@ -11,12 +11,12 @@ function SkillRow(
             {category}
          </h3>
          <div
-            className={`flex flex-wrap gap-4 ${idx % 2 !== 0 ? 'justify-end' : ''}`}
+            className={`flex flex-wrap gap-3 ${idx % 2 !== 0 ? 'justify-end' : ''}`}
          >
             {skills.map((skill, i) => (
                <span
                   key={i}
-                  className="px-4 py-2 rounded-full bg-gradient-to-r from-primary to-primary/50 text-primary-foreground text-sm font-medium shadow hover:scale-105 transition-transform"
+                  className="px-4 py-1.5 rounded-full bg-gradient-to-r from-secondary to-secondary/50 text-secondary-foreground text-sm font-medium shadow hover:scale-105 transition-transform"
                >
                   {skill}
                </span>

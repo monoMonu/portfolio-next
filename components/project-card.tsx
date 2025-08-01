@@ -70,15 +70,15 @@ function ProjectCard({
          onMouseMove={handleMouseMove}
          onMouseLeave={handleMouseLeave}
       >
-         <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden pt-0 px-0 pb-4 sm:pb-5 bg-gradient-to-br from-primary/10 to-secondary/10">
+         <Card className="group transition-all duration-300 overflow-hidden pt-0 px-0 pb-4 sm:pb-5 bg-transparent border-none shadow-none">
             <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/20 flex items-center justify-center">
                <Code className="w-12 h-12 text-primary/60" />
             </div>
             <CardHeader className="px-4 sm:px-5">
-               <CardTitle className="group-hover:text-primary transition-colors pb-1 text-xl">
+               <CardTitle className="group-hover:text-primary transition-colors pb-1 text-lg">
                   {title}
                </CardTitle>
-               <CardDescription className='text-base'>
+               <CardDescription className='text-sm'>
                   {description.map((el, i) => (
                      <li key={i}>{el}</li>
                   ))}

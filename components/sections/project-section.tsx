@@ -12,7 +12,7 @@ function ProjectSection() {
 
    return (
       <section id="projects" className="py-20 px-5 sm:px-8">
-         <div className="max-w-6xl mx-auto">
+         <div className="max-w-screen-lg mx-auto">
             <motion.div
                initial={{ opacity: 0, y: 50 }}
                whileInView={{ opacity: 1, y: 0 }}

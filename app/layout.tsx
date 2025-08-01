@@ -11,13 +11,13 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-   title: "Monu | Web Developer Portfolio",
+   title: "Monu Dev",
    description: "Explore the work and projects of Monu, a passionate web developer specializing in modern web technologies.",
    keywords: ["Monu",  "monoMonu", "Portfolio", "Web Developer", "Frontend Developer", "Next.js", "React"],
    authors: [{ name: "Monu", url: "https://monomonu.vercel.app" }],
    creator: "Monu",
    openGraph: {
-      title: "Monu | Web Developer Portfolio",
+      title: "Monu Dev",
       description: "Showcasing Monu’s latest work, case studies, and web development projects.",
       url: "https://monomonu.vercel.app",
       siteName: "monoMonu",

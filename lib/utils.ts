@@ -23,3 +23,40 @@ export const fetchDataForKey = async (key: string) => {
       return error;
    }
 };
+
+export type ContactFormPayload = {
+   userEmail: string;
+   userName: string;
+   subject: string;
+   message: string;
+};
+
+export const sendEmail = async (data: ContactFormPayload) => {
+   try {
+      const response = await fetch('/api/email', {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json',
+         },
+         body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+         throw new Error(result.error || 'Failed to send message.');
+      }
+
+      return {
+         success: true,
+         data: result.data,
+      };
+   } catch (error: unknown) {
+      console.error('Email sending failed:', error);
+      return {
+         success: false,
+         error: error instanceof Error ? error.message : 'Something went wrong.',
+      };
+   }
+};
+
