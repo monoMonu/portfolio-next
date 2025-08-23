@@ -113,11 +113,11 @@ export default function HeroSection() {
             <div className='py-5 flex gap-4 justify-center'>
                {socialLinks.map(({ key, icon }, i) => {
                   const href = about?.[0]?.[key as keyof IAbout];
-                  return (
+                  return (href &&
                      <motion.a
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2*i }}
+                        transition={{ duration: 0.8, delay: 0.2*(i+1) }}
                         key={key} href={typeof href === 'string' ? href : ''}
                      >
                         <Button variant="outline" size="sm">

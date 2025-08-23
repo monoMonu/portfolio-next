@@ -85,7 +85,7 @@ function ContactSection() {
                         <div className='py-2 flex gap-4'>
                            {socialLinks.map(({ key, icon }, i) => {
                               const href = about?.[0]?.[key as keyof IAbout];
-                              return (
+                              return (href &&
                                  <motion.a
                                     initial={{ opacity: 0, y: 30 }}
                                     animate={{ opacity: 1, y: 0 }}

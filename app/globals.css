@@ -46,11 +46,10 @@
 :root {
    --radius: 0.625rem;
 
-   /* Light theme - Vibrant and clean */
    --background: #fafafa;
    --foreground: #0a0a0a;
 
-   --card: #ededed;
+   --card: #d4daea;
    --card-foreground: #0a0a0a;
 
    --popover: #ffffff;
@@ -62,7 +61,7 @@
    --secondary: #e4e4e7;
    --secondary-foreground: #18181b;
 
-   --muted: #d8d8d8;
+   --muted: #d0d5e5;
    --muted-foreground: #1a1a1a;
 
    --accent: #ededed;
