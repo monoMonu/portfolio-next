@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { DataProvider } from "@/lib/data-provider";
+import { Analytics } from "@vercel/analytics/next"
 
 const poppins = Poppins({
    weight: ["300", "400", "500", "600", "700", "800"],
@@ -51,6 +52,7 @@ export default function RootLayout({
          <body
             className={poppins.className}
          >
+            <Analytics />
             <ThemeProvider>
                <DataProvider>
                   <main>
