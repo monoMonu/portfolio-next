@@ -28,12 +28,12 @@ export default function ExperienceCard({
                   <h3 className="text-xl font-semibold">{role}</h3>
                   <p className="text-primary font-medium">{company}</p>
                </div>
-               <Badge variant="outline" className="w-fit mt-2 md:mt-0">
+               {/* <Badge variant="outline" className="w-fit mt-2 md:mt-0">
                   <Calendar className="w-4 h-4 mr-1" />
                   {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(start_date))} - {end_date ? new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(end_date)) : 'Present'}
-               </Badge>
+               </Badge> */}
             </div>
-            <p className="text-muted-foreground md:pr-12">
+            <p className="text-muted-foreground md:pr-12 sm:text-base text-sm">
                {responsibilities.map((el, i) => (
                   <li key={i}>{el}</li>
                ))}

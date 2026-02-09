@@ -6,7 +6,7 @@ function SkillRow(
    return (
       <div>
          <h3
-            className={`text-base font-semibold mb-2.5 ${idx % 2 !== 0 ? 'text-right' : ''}`}
+            className={`text-base font-semibold mb-4 ${idx % 2 !== 0 ? 'text-right' : ''}`}
          >
             {category}
          </h3>

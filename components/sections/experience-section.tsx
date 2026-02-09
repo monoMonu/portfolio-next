@@ -24,7 +24,7 @@ export default function ExperienceSection() {
                </p>
             </motion.div>
 
-            <div className="relative border-l-2 border-muted md:pl-8 space-y-12">
+            <div className="relative border-l-2 border-muted md:pl-8 pl-4 flex flex-col-reverse gap-12">
                {experiences?.map((exp, index) => (
                   <motion.div
                      key={index}
@@ -34,7 +34,7 @@ export default function ExperienceSection() {
                      viewport={{ once: true }}
                      className='relative'
                   >
-                     <span className="absolute md:left-[-2.65rem] left-[-.65rem] top-1/3 -translate-y-1/2 w-5 h-5 rounded-full bg-primary" />
+                     <span className="absolute md:left-[-2.65rem] left-[-1.65rem] top-1/3 -translate-y-1/2 w-5 h-5 rounded-full bg-primary" />
 
                      <ExperienceCard {...exp} />
                   </motion.div>

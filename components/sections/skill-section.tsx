@@ -44,7 +44,7 @@ export default function SkillsSection() {
                </p>
             </motion.div>
 
-            <div className="space-y-5">
+            <div className="space-y-9">
                {Object.entries(groupedSkills).map(([category, skills], idx) => (
                   <motion.div
                      key={category}
