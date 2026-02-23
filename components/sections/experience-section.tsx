@@ -9,8 +9,8 @@ export default function ExperienceSection() {
    const { experiences } = useData();
 
    return (
-      <section id="experience" className="py-20 px-5 sm:px-8">
-         <div className="max-w-screen-lg mx-auto relative overflow-hidden">
+      <section id="experience" className="py-12 px-5 sm:px-8">
+         <div className="max-w-screen-lg mx-auto relative">
             <motion.div
                initial={{ opacity: 0, y: 50 }}
                whileInView={{ opacity: 1, y: 0 }}
@@ -18,13 +18,13 @@ export default function ExperienceSection() {
                viewport={{ once: true }}
                className="text-center mb-16"
             >
-               <h2 className="text-3xl md:text-4xl font-bold mb-4">&lt; Experience /&gt;</h2>
-               <p className="text-lg text-primary">
+               <h2 className="text-2xl md:text-3xl font-bold mb-2">&lt; Experience /&gt;</h2>
+               <p className="text-base text-primary">
                   My professional journey and career highlights
                </p>
             </motion.div>
 
-            <div className="relative border-l-2 border-muted md:pl-8 pl-4 flex flex-col-reverse gap-12">
+            <div className="relative border-l-2 border-muted md:pl-8 pl-4 flex flex-col gap-8">
                {experiences?.map((exp, index) => (
                   <motion.div
                      key={index}
@@ -34,8 +34,7 @@ export default function ExperienceSection() {
                      viewport={{ once: true }}
                      className='relative'
                   >
-                     <span className="absolute md:left-[-2.65rem] left-[-1.65rem] top-1/3 -translate-y-1/2 w-5 h-5 rounded-full bg-primary" />
-
+                     <p className="absolute top-15 md:-left-[32.5px] -left-[16.5px] -translate-x-1/2 w-4 h-4 border-4 border-muted bg-background rounded-full" />
                      <ExperienceCard {...exp} />
                   </motion.div>
                ))}

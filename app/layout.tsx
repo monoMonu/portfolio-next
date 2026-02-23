@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { DataProvider } from "@/lib/data-provider";
 import { Analytics } from "@vercel/analytics/next"
 
-const poppins = Poppins({
-   weight: ["300", "400", "500", "600", "700", "800"],
-   subsets: ["latin"]
-})
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const metadata: Metadata = {
    title: "Monu Dev",
@@ -50,7 +48,7 @@ export default function RootLayout({
    return (
       <html lang="en" suppressHydrationWarning>
          <body
-            className={poppins.className}
+            className={`${geist.variable} ${geistMono.variable}`}
          >
             <Analytics />
             <ThemeProvider>

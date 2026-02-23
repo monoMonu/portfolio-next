@@ -27,7 +27,6 @@ export const fetchDataForKey = async (key: string) => {
 export type ContactFormPayload = {
    userEmail: string;
    userName: string;
-   subject: string;
    message: string;
 };
 

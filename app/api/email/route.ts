@@ -3,18 +3,36 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API);
 
+// Helper function to escape HTML
+const escapeHtml = (unsafe: string): string => {
+   return unsafe
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+};
+
 export const POST = async (req: NextRequest) => {
    try {
 
-      const { userEmail, userName, subject, message} = await req.json();
+      const { userEmail, userName, message} = await req.json();
+      
+      // Validate input
+      if (!userEmail || !userName || !message) {
+         return NextResponse.json({
+            success: false,
+            error: 'Missing required fields'
+         }, { status: 400 });
+      }
       
       const res = await resend.emails.send({
          from: process.env.FROM_DOMAIN || '',
          to: process.env.TO_EMAIL || '',
          replyTo: userEmail,
-         subject: subject || `New Message from ${userEmail}`,
-         html: htmlTemplate({userEmail, userName, subject, message}),
-         text: textTemplate({userEmail, userName, subject, message})
+         subject: `New Message from ${escapeHtml(userName)}`,
+         html: htmlTemplate({userEmail, userName, message}),
+         text: textTemplate({userEmail, userName, message})
       });
 
       return NextResponse.json({
@@ -24,7 +42,7 @@ export const POST = async (req: NextRequest) => {
 
    } catch (error) {
       console.log(error);
-      NextResponse.json({
+      return NextResponse.json({
          error: error,
          success: false
       })
@@ -33,7 +51,7 @@ export const POST = async (req: NextRequest) => {
 
 
 const htmlTemplate = (
-   {userName, userEmail, subject, message}: {userName: string, userEmail: string, subject: string, message: string}) => {
+   {userName, userEmail, message}: {userName: string, userEmail: string, message: string}) => {
    return (
       `
       <div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px;">
@@ -41,14 +59,13 @@ const htmlTemplate = (
             New Contact Form Submission
          </h2>
          <table cellpadding="0" cellspacing="0" style="width: 100%; font-size: 16px; color: #374151;">
-            <tr><td style="padding: 8px 0; width: 100px;"><strong>Name:</strong></td><td>${userName}</td></tr>
-            <tr><td style="padding: 8px 0;"><strong>Email:</strong></td><td>${userEmail}</td></tr>
-            <tr><td style="padding: 8px 0;"><strong>Subject:</strong></td><td>${subject}</td></tr>
+            <tr><td style="padding: 8px 0; width: 100px;"><strong>Name:</strong></td><td>${escapeHtml(userName)}</td></tr>
+            <tr><td style="padding: 8px 0;"><strong>Email:</strong></td><td>${escapeHtml(userEmail)}</td></tr>
          </table>
          <div style="margin-top: 24px;">
             <p style="font-size: 16px; color: #374151; margin-bottom: 8px;"><strong>Message:</strong></p>
             <div style="padding: 16px; background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 4px; color: #1f2937; line-height: 1.5;">
-            ${message.replace(/\n/g, '<br />')}
+            ${escapeHtml(message).replace(/\n/g, '<br />')}
             </div>
          </div>
          <p style="font-size: 14px; color: #9ca3af; margin-top: 40px; text-align: center;">
@@ -61,17 +78,16 @@ const htmlTemplate = (
 
 
 const textTemplate = (
-   {userName, userEmail, subject, message}: {userName: string, userEmail: string, subject: string, message: string}) => {
+   {userName, userEmail, message}: {userName: string, userEmail: string, message: string}) => {
    return (
       `
       New Contact Form Submission
 
-      Name: ${userName}
-      Email: ${userEmail}
-      Subject: ${subject}
+      Name: ${escapeHtml(userName)}
+      Email: ${escapeHtml(userEmail)}
 
       Message:
-      ${message}
+      ${escapeHtml(message)}
 
       —
       This message was sent from your portfolio contact form at monomonu.me

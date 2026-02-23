@@ -41,7 +41,8 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
             const promises = await Promise.all(
                Object.keys(data).map(async key => {
                const res = await fetchDataForKey(key);
-               return [key, res];
+               console.log(res)
+               return [key, res.sort((a: any, b: any) => a.id - b.id)];
             }))
 
             const newData = Object.fromEntries(promises);

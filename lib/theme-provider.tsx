@@ -19,8 +19,8 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-   const [theme, setThemeState] = useState<Theme>('system');
-   const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light');
+   const [theme, setThemeState] = useState<Theme>('dark');
+   const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('dark');
 
    const applyTheme = (themeToApply: Theme) => {
       const root = window.document.documentElement;
@@ -45,7 +45,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
    useEffect(() => {
       const stored = localStorage.getItem('theme') as Theme | null;
-      const initialTheme = stored || 'system';
+      const initialTheme = stored || 'dark';
       setThemeState(initialTheme);
       applyTheme(initialTheme);
 
