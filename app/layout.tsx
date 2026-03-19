@@ -15,6 +15,11 @@ export const metadata: Metadata = {
    keywords: ["Monu",  "monoMonu", "Portfolio", "Web Developer", "Frontend Developer", "Next.js", "React"],
    authors: [{ name: "Monu", url: "https://monomonu.vercel.app" }],
    creator: "Monu",
+   
+   verification: {
+      google: "UhvqZRmXASIvuL7T71aT8DX65-CvKkIQW9FkDZs713U",
+   },
+
    openGraph: {
       title: "Monu Dev",
       description: "Showcasing Monu’s latest work, case studies, and web development projects.",
