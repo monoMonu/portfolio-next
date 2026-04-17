@@ -50,7 +50,7 @@ export default function ContactForm() {
    };
 
    return (
-      <div className="rounded-xl sm:p-6 p-2 sm:backdrop-blur-md sm:bg-gradient-to-br sm:from-muted/40 sm:via-background/50 sm:to-muted/40">
+      <div className="rounded-xl p-6 backdrop-blur-xs bg-gradient-to-br from-muted/40 via-card/70 to-muted/40 shadow-md">
          <div className="mb-5">
             <h3 className="text-lg md:text-xl font-semibold mb-1">Send a Message</h3>
             <p className="text-muted-foreground text-sm">I&apos;ll get back to you as soon as possible.</p>
@@ -96,8 +96,8 @@ export default function ContactForm() {
             <Button
                type="submit"
                disabled={loading}
-               variant={'secondary'}
-               className="w-full gap-1.5"
+               variant={'outline'}
+               className="w-full gap-1.5 py-5"
             >
                {loading ? 'Sending...' : 'Send Message'}
             </Button>

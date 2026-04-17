@@ -20,7 +20,7 @@ export default function ExperienceCard({
 
    return (
       <Card
-         className="border-0 bg-gradient-to-r from-transparent to-card/60 shadow-none"
+         className="border-0 bg-gradient-to-r from-transparent to-card shadow-md relative z-10"
       >
          <CardContent className="px-6 py-4">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
@@ -28,9 +28,9 @@ export default function ExperienceCard({
                   <h3 className="text-lg font-semibold">{role}</h3>
                   <p className="text-primary font-medium text-sm">{company}</p>
                </div>
-               {(start_date && end_date) && <Badge variant="outline" className="w-fit mt-2 md:mt-0">
+               {(start_date || end_date) && <Badge variant="outline" className="w-fit mt-2 md:mt-0">
                   <Calendar className="w-4 h-4 mr-1" />
-                  {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(start_date))} - {end_date ? new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(end_date)) : 'Present'}
+                  {start_date && new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(start_date))} - {end_date ? new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(end_date)) : 'Present'}
                </Badge>}
             </div>
             <p className="text-muted-foreground md:pr-12 leading-relaxed text-sm">

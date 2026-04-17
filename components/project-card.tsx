@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
+import Image from 'next/image'
 import {
    Card,
    CardContent,
@@ -17,6 +18,7 @@ import Link from 'next/link'
 export interface ProjectType {
    index: number
    title: string
+   subtitle: string
    description: string[]
    tech: string[]
    livelink: string
@@ -27,12 +29,15 @@ export interface ProjectType {
 function ProjectCard({
    index,
    title,
+   subtitle,
    description,
    tech,
    livelink,
-   sourcelink
+   sourcelink,
+   image
 }: ProjectType) {
    const ref = useRef<HTMLDivElement>(null)
+   const [imageError, setImageError] = useState(false)
    const x = useMotionValue(0.5)
    const y = useMotionValue(0.5)
 
@@ -70,18 +75,34 @@ function ProjectCard({
          onMouseMove={handleMouseMove}
          onMouseLeave={handleMouseLeave}
       >
-         <Card className="group transition-all duration-300 overflow-hidden pt-0 px-0 pb-4 sm:pb-5 bg-transparent border-none shadow-none">
-            <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/20 flex items-center justify-center">
-               <Code className="w-12 h-12 text-primary/60" />
+         <Card className="group transition-all duration-300 overflow-hidden pt-0 px-0 pb-4 gap-5 sm:pb-5 backdrop-blur-xs bg-card/50 border-none shadow-md">
+            <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/20 flex items-center justify-center relative overflow-hidden">
+               {image && image.trim() && !imageError ? (
+                  <Image
+                     src={image}
+                     alt={title}
+                     fill
+                     sizes="(max-width: 768px) 100vw, 33vw"
+                     className="object-cover group-hover:scale-105 transition-transform duration-300"
+                     onError={() => setImageError(true)}
+                  />
+               ) : (
+                  <Code className="w-12 h-12 text-primary/60" />
+               )}
             </div>
             <CardHeader className="px-4 sm:px-5">
-               <CardTitle className="group-hover:text-primary transition-colors pb-1 text-lg">
+               <CardTitle className="group-hover:text-primary transition-colors pb-2 text-lg">
                   {title}
+                  <h6 className='text-sm text-muted-foreground/50'>
+                     {subtitle}
+                  </h6>
                </CardTitle>
                <CardDescription className='text-sm'>
-                  {description.map((el, i) => (
-                     <li key={i}>{el}</li>
-                  ))}
+                  <ul className='list-none'>
+                     {description && description.map((el, i) => (
+                        <li key={i}>- {el}</li>
+                     ))}
+                  </ul>
                </CardDescription>
             </CardHeader>
             <CardContent className="px-4 sm:px-5">
@@ -94,7 +115,7 @@ function ProjectCard({
                </div>
                <div className="flex gap-2">
                   {sourcelink && (
-                     <Link href={sourcelink}>
+                     <Link href={sourcelink} target='_blank'>
                         <Button size="sm" variant="outline" className="gap-2">
                            <Github className="w-4 h-4" />
                            Code
@@ -102,7 +123,7 @@ function ProjectCard({
                      </Link>
                   )}
                   {livelink && (
-                     <Link href={livelink}>
+                     <Link href={livelink} target='_blank'>
                         <Button size="sm" className="gap-2">
                            <ExternalLink className="w-4 h-4" />
                            Live Demo

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
-import { Github, Linkedin, Mail, Instagram } from 'lucide-react'
+import { Github, Linkedin, Mail, Instagram, CalendarDays } from 'lucide-react'
 import { Button } from '../ui/button'
 import ContactForm from '../contact-form'
 import { Separator } from '../ui/separator'
@@ -11,6 +11,13 @@ import { IAbout } from './hero-section'
 
 
 export const socialLinks = [
+   {
+      key: 'call',
+      icon: <CalendarDays className='size-5' />,
+      href: 'https://cal.com/monumonu/30min',
+      title: 'Schedule a free Call',
+      subtitle: 'Quick project discussion'
+   },
    {
       key: 'github',
       icon: <Github className='size-5' />,
@@ -66,7 +73,7 @@ function ContactSection() {
                   viewport={{ once: true }}
                   className='flex-1'
                >
-                  <Card className='sm:backdrop-blur-md sm:bg-gradient-to-br sm:from-muted/5 sm:to-background/90 border-none py-6 shadow-none gap-4'>
+                  <Card className='backdrop-blur-xs bg-gradient-to-br from-muted/20 to-card/70 border-none py-6 shadow-md gap-4'>
                      <CardHeader className='gap-1'>
                         <CardTitle className='text-lg md:text-xl'>Contact Information</CardTitle>
                         <CardDescription>

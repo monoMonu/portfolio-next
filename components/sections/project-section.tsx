@@ -32,11 +32,12 @@ function ProjectSection() {
                      key={i}
                      index={i}
                      title={project?.title}
+                     subtitle={project?.subtitle}
                      description={project?.description}
                      tech={project?.tech}
                      livelink={project?.livelink}
                      sourcelink={project?.sourcelink}
-                     image="#"
+                     image={project.image}
                   />
                ))
                }

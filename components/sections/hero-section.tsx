@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { ArrowDown, Github, Instagram, Linkedin, Mail, Twitter, Briefcase } from 'lucide-react'
+import { ArrowDown, Github, Instagram, Linkedin, Mail, Twitter, Briefcase, CalendarDays, Contact } from 'lucide-react'
 import Link from 'next/link'
 import { useData } from '@/lib/data-provider'
 import { motion, useScroll, useTransform } from 'framer-motion'
@@ -74,9 +74,8 @@ export default function HeroSection() {
       <motion.section
          ref={containerRef}
          style={{ y: heroY, opacity: heroOpacity }}
-         className="relative h-[calc(100vh-30px)] max-h-160 flex items-center justify-center overflow-hidden bg-background"
+         className="relative h-[calc(100vh-30px)] max-h-160 flex items-center justify-center overflow-hidden"
       >
-         <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-bg/20" />
 
          <div className="relative z-10 text-center max-w-3xl px-6 sm:px-8 mx-auto">
             {/* Available for Work Badge */}
@@ -113,16 +112,16 @@ export default function HeroSection() {
                className="flex flex-col sm:flex-row gap-4 justify-center mb-6 animate-fade-in-up"
                style={{ animationDelay: '0.4s', animationFillMode: 'both' }}
             >
-               <Link href={'#contact'}>
+               <Link href={'https://cal.com/monumonu/30min'}>
                   <Button size="lg" className="gap-2 w-full sm:w-auto bg-primary hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl">
-                     <Briefcase className="w-4 h-4" />
-                     Hire Me
+                     <CalendarDays className="w-4 h-4" />
+                     Schedule a free Call
                   </Button>
                </Link>
-               <Link href={'#projects'}>
+               <Link href={'#contact'}>
                   <Button variant="outline" size="lg" className="gap-2 w-full sm:w-auto hover:bg-primary/10 transition-all duration-200">
-                     <Github className="w-4 h-4" />
-                     View Projects
+                     <Mail className="w-4 h-4" />
+                     Contact Me
                   </Button>
                </Link>
             </div>

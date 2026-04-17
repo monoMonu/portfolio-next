@@ -24,7 +24,7 @@ export default function ExperienceSection() {
                </p>
             </motion.div>
 
-            <div className="relative border-l-2 border-muted md:pl-8 pl-4 flex flex-col gap-8">
+            <div className="relative border-l-2 border-muted md:pl-8 pl-4 flex flex-col-reverse gap-8 ">
                {experiences?.map((exp, index) => (
                   <motion.div
                      key={index}
