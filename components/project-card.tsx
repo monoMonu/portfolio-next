@@ -75,7 +75,7 @@ function ProjectCard({
          onMouseMove={handleMouseMove}
          onMouseLeave={handleMouseLeave}
       >
-         <Card className="group transition-all duration-300 overflow-hidden pt-0 px-0 pb-4 gap-5 sm:pb-5 backdrop-blur-xs bg-card/50 border-none shadow-md">
+         <Card className="group transition-all duration-300 overflow-hidden pt-0 px-0 pb-4 gap-5 sm:pb-5 bg-card/50 border-none shadow-md">
             <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/20 flex items-center justify-center relative overflow-hidden">
                {image && image.trim() && !imageError ? (
                   <Image

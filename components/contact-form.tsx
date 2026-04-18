@@ -50,7 +50,7 @@ export default function ContactForm() {
    };
 
    return (
-      <div className="rounded-xl p-6 backdrop-blur-xs bg-gradient-to-br from-muted/40 via-card/70 to-muted/40 shadow-md">
+      <div className="rounded-xl p-6 bg-gradient-to-br from-muted/40 via-card/70 to-muted/40 shadow-md">
          <div className="mb-5">
             <h3 className="text-lg md:text-xl font-semibold mb-1">Send a Message</h3>
             <p className="text-muted-foreground text-sm">I&apos;ll get back to you as soon as possible.</p>

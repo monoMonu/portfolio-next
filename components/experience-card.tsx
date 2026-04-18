@@ -20,7 +20,7 @@ export default function ExperienceCard({
 
    return (
       <Card
-         className="border-0 bg-gradient-to-r from-transparent to-card shadow-md relative z-10"
+         className="border-0 bg-gradient-to-r from-transparent to-card shadow-xs relative z-10"
       >
          <CardContent className="px-6 py-4">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">

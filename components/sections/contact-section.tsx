@@ -73,7 +73,7 @@ function ContactSection() {
                   viewport={{ once: true }}
                   className='flex-1'
                >
-                  <Card className='backdrop-blur-xs bg-gradient-to-br from-muted/20 to-card/70 border-none py-6 shadow-md gap-4'>
+                  <Card className='bg-gradient-to-br from-muted/20 to-card/70 border-none py-6 shadow-md gap-4'>
                      <CardHeader className='gap-1'>
                         <CardTitle className='text-lg md:text-xl'>Contact Information</CardTitle>
                         <CardDescription>

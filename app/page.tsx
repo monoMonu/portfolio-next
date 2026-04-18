@@ -22,12 +22,12 @@ export default function Portfolio() {
          :
          <div className="min-h-screen bg-background">
             <GridPattern
-               width={60}
-               height={60}
+               width={80}
+               height={80}
                x={-1}
                y={-1}
                className={cn(
-                  "[mask-image:radial-gradient(400px_circle_at_center,#fff7,transparent)] fixed"
+                  "[mask-image:radial-gradient(400px_circle_at_center,#fff5,transparent)] fixed"
                )}
             />
             <Header />
