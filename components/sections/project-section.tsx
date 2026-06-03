@@ -1,13 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import ProjectCard from '../project-card'
-import { useData } from '@/lib/data-provider'
+import ProjectCard, { IProject } from '../project-card'
 
 
-function ProjectSection() {
-
-   const { projects } = useData();
+function ProjectSection({ projects }: {projects: IProject[]}) {
    const sortedProjects = projects?.sort((a, b) => a.index - b.index);
 
    return (

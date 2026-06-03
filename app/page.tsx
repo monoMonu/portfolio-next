@@ -1,25 +1,19 @@
-'use client'
-
 import HeroSection from '@/components/sections/hero-section'
 import SkillSection from '@/components/sections/skill-section'
 import ExperienceSection from '@/components/sections/experience-section'
 import ContactSection from '@/components/sections/contact-section'
 import ProjectSection from '@/components/sections/project-section'
 import Header from '@/components/header'
-import { useData } from '@/lib/data-provider'
-import Loader from '@/components/loader'
 import { GridPattern } from '@/components/ui/grid-pattern'
 import { cn } from '@/lib/utils'
+import { getPortfolioData } from '@/lib/portfolioData'
 
-export default function Portfolio() {
-
-   const { loading } = useData();
+export default async function Portfolio() {
+   
+   const data = await getPortfolioData();
    
    return (
       <div className='relative'>
-         {loading ? 
-            <Loader />
-         :
          <div className="relative isolate min-h-screen bg-background">
             <GridPattern
                width={80}
@@ -32,13 +26,13 @@ export default function Portfolio() {
             />
             <div className="relative z-10">
                <Header />
-               <HeroSection />
-               <SkillSection />
-               <ExperienceSection />
-               <ProjectSection />
+               <HeroSection about={data.about} />
+               <SkillSection skills={data.skills} />
+               <ExperienceSection experiences={data.experiences} />
+               <ProjectSection projects={data.projects} />
                <ContactSection />
             </div>
-         </div>}
+         </div>
       </div>
    )
 }

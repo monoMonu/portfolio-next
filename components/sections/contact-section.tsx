@@ -2,13 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
-import { Github, Linkedin, Mail, Instagram, CalendarDays } from 'lucide-react'
+import { Github, Mail, CalendarDays } from 'lucide-react'
 import { Button } from '../ui/button'
 import ContactForm from '../contact-form'
 import { Separator } from '../ui/separator'
-import { useData } from '@/lib/data-provider'
-import { IAbout } from './hero-section'
-
 
 export const socialLinks = [
    {
@@ -46,8 +43,6 @@ export const socialLinks = [
 ];
 
 function ContactSection() {
-
-   const { about } = useData();
 
    return (
       <section id="contact" className="pt-20 pb-8 px-5 sm:px-8">

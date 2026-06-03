@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "./ui/badge";
 import { Calendar } from "lucide-react";
 
-export interface ExperienceType {
+export interface IExperience {
    role: string;
    company: string;
    start_date?: string;
@@ -16,7 +16,7 @@ export default function ExperienceCard({
    start_date,
    end_date,
    responsibilities,
-}: ExperienceType) {
+}: IExperience) {
 
    return (
       <Card
@@ -33,11 +33,11 @@ export default function ExperienceCard({
                   {start_date && new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(start_date))} - {end_date ? new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(end_date)) : 'Present'}
                </Badge>}
             </div>
-            <p className="text-muted-foreground md:pr-12 leading-relaxed text-sm">
+            <ul className="list-disc space-y-1 pl-5 text-muted-foreground md:pr-12 leading-relaxed text-sm">
                {responsibilities.map((el, i) => (
                   <li key={i}>{el}</li>
                ))}
-            </p>
+            </ul>
          </CardContent>
       </Card>
    );

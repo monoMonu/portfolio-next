@@ -4,9 +4,13 @@ import React, { useState } from 'react';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
-import { Label } from './ui/label';
-import { Send } from 'lucide-react';
-import { ContactFormPayload, sendEmail } from '@/lib/utils';
+
+
+export type ContactFormPayload = {
+  userEmail: string;
+  userName: string;
+  message: string;
+};
 
 export default function ContactForm() {
    const [formData, setFormData] = useState({
@@ -29,7 +33,7 @@ export default function ContactForm() {
       setStatus(null);
 
       const { fullName, email, message } = formData;
-      const userName = fullName.trim() || 'Anonymous';
+      const userName = fullName.trim() || "Anonymous";
 
       const payload: ContactFormPayload = {
          userEmail: email,
@@ -37,16 +41,28 @@ export default function ContactForm() {
          message,
       };
 
-      const result = await sendEmail(payload);
+      try {
+         const res = await fetch("/api/email", {
+            method: "POST",
+            headers: {
+               "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+         });
 
-      if (result.success) {
-         setStatus('Message sent successfully!');
-         setFormData({ fullName: '', email: '', message: '' });
-      } else {
-         setStatus(`Failed to send message: ${result.error}`);
+         const result = await res.json();
+
+         if (!result.success) {
+            throw new Error(result.error || "Failed to send message");
+         }
+
+         setStatus("Message sent successfully!");
+         setFormData({ fullName: "", email: "", message: "" });
+      } catch (err: any) {
+         setStatus(`Failed to send message: ${err.message}`);
+      } finally {
+         setLoading(false);
       }
-
-      setLoading(false);
    };
 
    return (

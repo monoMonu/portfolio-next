@@ -15,7 +15,7 @@ import { Button } from './ui/button'
 import { Badge } from './ui/badge'
 import Link from 'next/link'
 
-export interface ProjectType {
+export interface IProject {
    index: number
    title: string
    subtitle: string
@@ -35,7 +35,7 @@ function ProjectCard({
    livelink,
    sourcelink,
    image
-}: ProjectType) {
+}: IProject) {
    const ref = useRef<HTMLDivElement>(null)
    const [imageError, setImageError] = useState(false)
    const x = useMotionValue(0.5)

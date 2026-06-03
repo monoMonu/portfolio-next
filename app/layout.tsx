@@ -3,7 +3,6 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import './globals.css'
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/lib/theme-provider";
-import { DataProvider } from "@/lib/data-provider";
 import { Analytics } from "@vercel/analytics/next"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
@@ -57,13 +56,11 @@ export default function RootLayout({
          >
             <Analytics />
             <ThemeProvider>
-               <DataProvider>
-                  <main>
+               <main>
 
-                     {children}
-                     <Footer />
-                  </main>
-               </DataProvider>
+                  {children}
+                  <Footer />
+               </main>
             </ThemeProvider>
 
          </body>

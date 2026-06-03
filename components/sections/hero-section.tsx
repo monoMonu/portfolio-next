@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ArrowDown, Github, Instagram, Linkedin, Mail, Twitter, Briefcase, CalendarDays, Contact } from 'lucide-react'
 import Link from 'next/link'
-import { useData } from '@/lib/data-provider'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 
@@ -58,8 +57,7 @@ const socialLinks = [
    },
 ];
 
-export default function HeroSection() {
-   const { about } = useData();
+export default function HeroSection({ about }: {about: IAbout[]}) {
 
    const containerRef = useRef<HTMLDivElement>(null)
    const { scrollYProgress } = useScroll({

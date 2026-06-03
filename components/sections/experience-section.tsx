@@ -1,12 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import ExperienceCard from '../experience-card'
-import { useData } from '@/lib/data-provider'
+import ExperienceCard, { IExperience } from '../experience-card'
 
-export default function ExperienceSection() {
-
-   const { experiences } = useData();
+export default function ExperienceSection({ experiences }: {experiences: IExperience[]}) {
 
    return (
       <section id="experience" className="py-12 px-5 sm:px-8">

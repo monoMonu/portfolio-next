@@ -1,6 +1,5 @@
 'use client'
 
-import { useData } from '@/lib/data-provider';
 import { motion } from 'framer-motion';
 import { Marquee } from '../ui/marquee';
 import SkillLogo from '../skill-logo';
@@ -24,8 +23,7 @@ const distributeSkillsInRows = (skills: ISkills[] | null | undefined) => {
    return rows;
 };
 
-export default function SkillsSection() {
-   const { skills } = useData();
+export default function SkillsSection({ skills }: {skills: ISkills[]}) {
    const [row1, row2, row3] = distributeSkillsInRows(skills);
 
    return (
